@@ -1,0 +1,36 @@
+array =[]
+
+for _ in range(9):
+    n = int(input())
+    array.append(n)
+
+array.sort()
+array_sum = sum(array)
+
+for i in range(9):
+    array_sum -=array[i]
+    for j in range(9):
+
+        if i==j:
+            continue
+
+        array_sum-=array[j]
+
+
+        if array_sum==100:
+
+            i_index=i
+            j_index=j
+            break
+        else:
+            array_sum+=array[j]
+
+    array_sum+=array[i]
+
+
+for i in range(9):
+
+    if i==i_index or i==j_index:
+        continue
+
+    print(array[i])
