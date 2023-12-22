@@ -1,0 +1,17 @@
+def solution(array, commands):
+    answer = []
+    k_list = []
+    
+    for i in range(len(commands)):   
+        num= []    
+        k_index=0
+        for j in range(commands[i][0]-1,commands[i][1]):
+            num.append(array[j])
+            
+        num.sort()
+        print(num)
+        k_index = commands[i][2]
+        
+        answer.append(num[k_index-1])
+            
+    return answer
